@@ -21,11 +21,14 @@
         });
         socket.emit('mensaje', {nombre: 'Elmer'});
 
-        socket.on('mensaje', function(payload){
+        socket.on('nuevo-mensaje', function(payload){
             console.log('Escuchando:', payload);
         });
-
         socket.emit('msj', {equipo: 'Real Madrid Campeon de Europa'})
+        socket.on('active-bands', function(bands){
+            console.clear();
+            console.table(bands);
+        });
     </script>
 </body>
 </html>
